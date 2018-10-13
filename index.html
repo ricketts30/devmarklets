@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>devmarklets</title>
+<link rel="stylesheet" href="devmarklets.css">
+<script type="text/javascript" src="bm_000_list.js">/* just an import */</script>
+<script type="text/javascript">
+    var ul = document.getElementById("id_ul_stable");
+    var site_url = document.location.href;
+    console.log(site_url);
+    if(site_url)
+    {
+        if(site_url.endsWith("index.html")){
+            site_url = site_url.slice(0, -10);
+        }
+    }else{
+        site_url = '/';
+    }
+    console.log(site_url);
+    bm_list.items.forEach(element => {
+        console.log(` link:${element.script} text:${element.title} about:${element.about} `);
+    });
+</script>
+</head>
+
+<body>
+<h1>Devmarklets</h1>
+<p>Drag (but <u>not</u> click) the link to your bookmark toolbar and then click it when you have your website open.</p>
+            <div class="stable">
+                <h2>stable</h2>
+                <ul id="id_ul_stable">
+                    <li>
+                        <a href="javascript:var%20bmVersion='001.001';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='bm001.js';void(0);">bm001</a>
+                        <span>a little description of what it does</span>
+                    </li>
+                </ul>
+            </div>
+</body>
+
+</html>

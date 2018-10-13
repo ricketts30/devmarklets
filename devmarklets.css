@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 20px;
+    color: yellowgreen;
+    font-family: monospace;
+    text-align: center;
+}
+
+div {
+    margin: 20px;
+}
+
+li {
+    text-align: left;
+}
+
+div.stable {
+    border: 1px solid palegreen;
+    background-color: #2a412b;
+    color: palegreen;
+}
+
+div.stable a {
+    color: palegreen;
+}
