@@ -2,7 +2,7 @@ var bm_list = {
     "items": 
         [
             { 
-                "script" : "bm_001_alertS.js", 
+                "script" : "bm_001_alert.js", 
                 "code" : "001",
                 "title": "DVM:Alert", 
                 "about": "just runs a simple alert popup to see if your website allows bookmarklets"
