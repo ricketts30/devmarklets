@@ -2,7 +2,7 @@ body {
     background-color: black;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 500px;
     margin-top: 20px;
     color: yellowgreen;
     font-family: monospace;
@@ -15,6 +15,7 @@ div {
 
 li {
     text-align: left;
+    margin-bottom: 5px;
 }
 
 div.stable {
