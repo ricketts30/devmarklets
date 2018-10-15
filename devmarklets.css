@@ -27,3 +27,27 @@ div.stable {
 div.stable a {
     color: palegreen;
 }
+
+div.app {
+    border: 1px solid cyan;
+    background-color: navy;
+    color: white;
+}
+
+div.app select {
+	background-color: navy;
+    color: white;
+}
+
+button {
+	background-color: navy;
+	color: white;
+}
+
+button.disabled {
+	text-decoration: italic;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+

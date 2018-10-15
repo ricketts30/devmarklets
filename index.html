@@ -14,6 +14,25 @@
             <ul id="id_ul_stable">
             </ul>
         </div>
+		<p>The following is a "totally secure" JavaScript app that does not let children order horror movies.  Unless you select "child" and "some horror movies" and then trigger the <em>DVM:ClassToggle</em> link</p>
+		<div class="app">
+			<h2>"secure" app</h2>
+			<p>I am a 
+				<select id="who_am_i" onchange="secure_business_code()">
+					<option value="?" selected="selected">select an age range...</option>
+					<option value="child">child</option>
+					<option value="adult">adult</option>
+				</select>
+			</p>
+			<p>and I want 
+				<select id="what_i_want" onchange="secure_business_code()">
+					<option value="?" selected="selected">select an thing...</option>
+					<option value="a puppy">a puppy</option>
+					<option value="some horror movies">some horror movies</option>
+				</select>
+			</p>
+			<p><button id="secure_button" class="ldisabled" onclick="place_order()">Place Order</button></p>
+		</div>
         <script type="text/javascript">
             let site_url = document.location.href;
             //console.log(site_url);
@@ -43,5 +62,48 @@
                 ul.appendChild(list_item);
                 });
         </script>
+		<script type="text/javascript">
+		
+		var elem_secure_button = document.getElementById("secure_button");
+		var elem_combo_who = document.getElementById("who_am_i");
+		var elem_combo_what = document.getElementById("what_i_want");
+		
+		var who_text = null;
+		var what_text = null;
+		var disabled_class = "disabled";
+		
+		function get_values(){
+			who_text = elem_combo_who.options[elem_combo_who.selectedIndex].value;
+			what_text = elem_combo_what.options[elem_combo_what.selectedIndex].value;
+		}
+		
+		function place_order(){
+			get_values();
+			var the_text = `I am an ${who_text} and I have placed an order for ${what_text}.`;
+			alert(the_text);
+		}
+		
+		function secure_business_code(){
+			get_values();
+			var debug_text = `who_text = [${who_text}]; what_text = [${what_text}].`;
+			console.log(debug_text);
+			var is_disabled = true;
+			if(who_text != '?' && what_text != '?'){
+				is_disabled = who_text == 'child' && what_text == 'some horror movies';
+			}
+			if(is_disabled){
+				if(!elem_secure_button.classList.contains(disabled_class)){
+					elem_secure_button.classList.add(disabled_class);
+				}
+			}else{
+				if(elem_secure_button.classList.contains(disabled_class)){
+					elem_secure_button.classList.remove(disabled_class);
+				}
+			}
+		}
+		
+		secure_business_code();
+		
+		</script>
     </body>
 </html>
